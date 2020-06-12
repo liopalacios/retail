@@ -40,7 +40,7 @@ public class ClienteServiceImpl implements ClienteService {
         varianza = varianza / list.size();
         desv_standar = Math.sqrt(varianza);
 
-        return ImmutableMap.of("promedio",media,"Desviacion Estandar", desv_standar);
+        return ImmutableMap.of("promedio",media,"desviacion", desv_standar, "total",list.size());
     }
 
     @Override

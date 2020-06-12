@@ -1,6 +1,7 @@
 package com.intercorp.api.retail.controller;
 
 import com.intercorp.api.retail.dto.ClienteDto;
+import com.intercorp.api.retail.dto.ResponseFirebase;
 import com.intercorp.api.retail.entity.ClienteEntity;
 import com.intercorp.api.retail.service.ClienteService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +15,7 @@ import java.util.concurrent.ExecutionException;
 
 @RestController
 @RequestMapping("/api")
+@CrossOrigin(origins = "http://localhost:4200", methods= {RequestMethod.GET,RequestMethod.POST})
 public class ClienteController {
     @Autowired
     private ClienteService clienteService;
@@ -29,9 +31,12 @@ public class ClienteController {
     }
 
     @PostMapping("/creacliente")
-    public ResponseEntity<?> createClientes(@RequestBody ClienteEntity model) throws ExecutionException, InterruptedException {
+    public ResponseEntity<ResponseFirebase> createClientes(@RequestBody ClienteEntity model) throws ExecutionException, InterruptedException {
         System.out.println(model);
         String resp = clienteService.saveClient(model);
-        return new ResponseEntity<Object>(resp, HttpStatus.OK);
+
+        return new ResponseEntity<ResponseFirebase>(ResponseFirebase.builder()
+                .dni(model.getDni())
+                .fecha(resp).build(), HttpStatus.OK);
     }
 }
