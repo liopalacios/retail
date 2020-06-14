@@ -15,7 +15,7 @@ import java.util.concurrent.ExecutionException;
 
 @RestController
 @RequestMapping("/api")
-@CrossOrigin(origins = "http://localhost:4200", methods= {RequestMethod.GET,RequestMethod.POST})
+@CrossOrigin(origins = "https://retail-939a8.web.app", methods= {RequestMethod.GET,RequestMethod.POST})
 public class ClienteController {
     @Autowired
     private ClienteService clienteService;

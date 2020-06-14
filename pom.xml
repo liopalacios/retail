@@ -68,9 +68,9 @@
 		<dependency>
 			<groupId>com.google.gms</groupId>
 			<artifactId>google-services</artifactId>
-			<version>3.0.0</version>
-			<scope>runtime</scope>
+			<version>3.1.1</version>
 		</dependency>
+
 		<!-- https://mvnrepository.com/artifact/org.codehaus.jackson/jackson-mapper-asl -->
 		<dependency>
 			<groupId>org.codehaus.jackson</groupId>
@@ -89,7 +89,6 @@
 			<artifactId>grpc-netty-shaded</artifactId>
 			<version>1.29.0</version>
 		</dependency>
-
 
 	</dependencies>
 

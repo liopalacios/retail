@@ -3,7 +3,6 @@ package com.intercorp.api.retail.service.impl;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.FirebaseOptions;
-import com.google.gson.JsonObject;
 import org.json.JSONObject;
 import org.springframework.stereotype.Service;
 
